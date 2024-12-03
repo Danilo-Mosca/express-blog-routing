@@ -20,6 +20,7 @@ router.get("/", (req, res)=> {
     // Visualizzo il json con la lista completa
     res.json(objectPosts);
 });
+
 // Nome rotta: Show
 router.get("/:id", (req, res)=> {
     // Recupero il parametro dinamico dell'id inserito, faccio il casting (perchè req.params.id restituisce sempre una stringa) e lo assegno alla costante id
@@ -44,18 +45,22 @@ router.get("/:id", (req, res)=> {
         });
     }
 });
+
 // Nome rotta: Store
 router.post("/", (req, res)=> {
     res.send("Creazione di un nuovo post");
 });
+
 // Nome rotta: Update
 router.put("/:id", (req, res)=> {
     res.send(`Aggiornamento del post con id ${req.params.id}`);
 });
+
 // Nome rotta: Modify
 router.patch("/:id", (req, res)=> {
     res.send(`Modifica del post con id ${req.params.id}`);
 });
+
 // Nome rotta: Destroy
 router.delete("/:id", (req, res)=> {
     res.send(`Cancellazione del post con id ${req.params.id}`);
