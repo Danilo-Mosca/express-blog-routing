@@ -5,29 +5,29 @@ const express = require('express');
 // Poi mi creo l'oggetto router istanziando una variabile ad express.Router()
 const router = express.Router();
 
-/* Mi creo tutte le rotte necessarie per le risorse: */
+/* Mi creo tutte le rotte per le operazioni CRUD (Index, Show, Create, Update e Delete) necessarie per le risorse: */
 
-// Index
+// Nome rotta: Index
 router.get("/", (req, res)=> {
     res.send("Lista completa dei post");
 });
-// Show
+// Nome rotta: Show
 router.get("/:id", (req, res)=> {
     res.send(`Dettagli del post con id ${req.params.id}`);
 });
-// Store
+// Nome rotta: Store
 router.post("/", (req, res)=> {
     res.send("Creazione di un nuovo post");
 });
-// Update
+// Nome rotta: Update
 router.put("/:id", (req, res)=> {
     res.send(`Aggiornamento del post con id ${req.params.id}`);
 });
-// Modify
+// Nome rotta: Modify
 router.patch("/:id", (req, res)=> {
     res.send(`Modifica del post con id ${req.params.id}`);
 });
-// Destroy
+// Nome rotta: Destroy
 router.delete("/:id", (req, res)=> {
     res.send(`Eliminazione del post con id ${req.params.id}`);
 });
