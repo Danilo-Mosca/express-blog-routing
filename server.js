@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
     res.send("<h1>Server del mio blog</h1>");
 });
 
-// Dopo l'app get della root "/" (perchè le rotte vanno a cascata e altrimenti Express non vedrebbe la rotta principale) indico ad Express Js che esistono rotte con il prefisso "/posts" e le chiamo con il metodo use() così da specificare che il prefisso di queste rotte deve essere "/posts/" (va inserito sempre al plurale)
+/* USO postsRouter COME MIDDLEWARE */
+// Dopo l'app get della root "/" (perchè le rotte vengono controllate a CASCATA e altrimenti Express non vedrebbe la rotta principale /) indico ad Express Js che esistono rotte con il prefisso "/posts" e le chiamo con il metodo use() così da specificare che il prefisso, l'endpoint di queste rotte deve essere "/posts/" (va inserito sempre al plurale)
 app.use('/posts', postsRouter);
 
 
